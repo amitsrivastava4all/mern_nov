@@ -1,0 +1,89 @@
+var ename;
+typeof ename;
+ename = "Brain Mentors";
+typeof ename;
+ename = 1001;
+typeof ename;
+e = true;
+typeof ename;
+ename = null;
+typeof ename;
+var arr = [10,20,30];
+typeof arr;
+var e = {"ram":"Shakti Nagar,Delhi-7","shyam":"RoopNagar"};
+typeof e;
+e["ram"];
+arr[1];
+function add(){
+console.log("I am Add ");
+}
+typeof add;
+var x = add;
+typeof x;
+var y = 100;
+typeof y;
+y = y / "Amit"
+10 +"Amit"
+isNaN(y);
+y = 100/0;
+isFinite(y);
+'Amount is '+y;
+'Amount is '+(isFinite(y)?y:0);
+var d = "1000";
+var name = "Ram";
+name = 'Ram';
+name = `Brain Mentors
+Rohini Delhi
+Learn Mern Stack`;
+var a =100;
+var b = 200;
+"A is "+a+" and B is "+b;
+"A is "+a+" and B is "+b +" SUm is "+a+b;
+"A is "+a+" and B is "+b +" SUm is "+(a+b);
+`A is ${a} and B is ${b} and Sum is ${a+b}`
+try{
+g2;
+}
+catch(e){
+console.log('No Var Found ',e);
+}
+100 + undefined;
+100 + null;
+undefined == null
+10 == "10"
+10==10.0
+10==="10"
+undefined===null
+"Amit "+100
+100 + true
+100 - true
+100 - false
+var h1 = Number.MAX_SAFE_INTEGER;
+var h2 = BigInt(1000000000000000000);
+typeof h2;
+var h3 = 1000n;
+h2 + h3
+h2 - 8989;
+h2 - 8989n;
+var i = 100000;
+h2 + i;
+h2 + BigInt(i)
+var f1 = 100100;
+f1.toString()
+var f2 = new Number(10001);
+typeof f2;
+var d1 = new String("Hello");
+typeof d1;
+var d2 = "Hello";
+typeof d2;
+var arr = [10,20,30];
+arr.push(100);
+arr;
+arr.splice(1,1);
+var x = 'amit';
+x.toUpperCase();
+var g = x.toUpperCase();
+typeof g;
+2 **5
+
+
