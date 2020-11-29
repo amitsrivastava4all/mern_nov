@@ -1,0 +1,304 @@
+var x = "Hello";
+undefined
+typeof x;
+"string"
+var y = new String("Hello");
+undefined
+y;
+String {"Hello"}
+typeof y;
+"object"
+var z= String("Hello");
+undefined
+z;
+"Hello"
+typeof z;
+"string"
+typeof String;
+"function"
+Number;
+ƒ Number() { [native code] }
+Boolean
+ƒ Boolean() { [native code] }
+var z = new Number(1000);
+undefined
+z;
+Number {1000}
+var f = 1000;
+undefined
+f = f + 10;
+1010
+f.toString();
+"1010"
+f;
+1010
+f = f.toString();
+"1010"
+f;
+"1010"
+z;
+Number {1000}
+z.toString();
+"1000"
+z;
+Number {1000}
+function show(){
+    console.log("I am Show ");
+}
+undefined
+show();
+VM773:2 I am Show 
+undefined
+show(10,20);
+VM773:2 I am Show 
+undefined
+show("Amit",10);
+VM773:2 I am Show 
+undefined
+show("Amit",10,20,30);
+VM773:2 I am Show 
+undefined
+console.log("Hello JS ");
+VM988:1 Hello JS 
+undefined
+console.dir(show);
+VM1040:1 ƒ show()arguments: nullcaller: nulllength: 0name: "show"prototype: {constructor: ƒ}__proto__: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: Object[[FunctionLocation]]: <unknown>[[Scopes]]: Scopes[0][[FunctionLocation]]: VM773:1[[Scopes]]: Scopes[1]
+undefined
+function show(){
+    console.log("I am Show ",arguments);
+}
+undefined
+typeof console
+"object"
+typeof console.log
+"function"
+console.log('Hello JS '+100);
+VM1218:1 Hello JS 100
+undefined
+'Hello ' + [10,20]
+"Hello 10,20"
+console.log('Hello JS '+[10,20]);
+VM1282:1 Hello JS 10,20
+undefined
+console.log('Hello JS ',[10,20]);
+VM1292:1 Hello JS  (2) [10, 20]
+undefined
+console.log('Hello JS ',{id:1001, name:'Ram'});
+VM1322:1 Hello JS  {id: 1001, name: "Ram"}
+undefined
+console.log('Hello JS '+{id:1001, name:'Ram'});
+VM1334:1 Hello JS [object Object]
+undefined
+console.log('Hello JS '+100.toString());
+VM1366:1 Uncaught SyntaxError: Invalid or unexpected token
+console.log('Hello JS '+(100.toString()));
+VM1384:1 Uncaught SyntaxError: Invalid or unexpected token
+100.toString()
+VM1458:1 Uncaught SyntaxError: Invalid or unexpected token
+var g = 100;
+undefined
+g;
+100
+g.toString()
+"100"
+console.log('Hello JS '+g.toString());
+VM1654:1 Hello JS 100
+undefined
+console.log('Hello JS '+100);
+VM1660:1 Hello JS 100
+undefined
+console.dir(console.log);
+VM1744:1 ƒ log()arguments: (...)caller: (...)length: 0name: "log"__proto__: ƒ ()[[Scopes]]: Scopes[0]
+undefined
+var arr = [10,20];
+console.log('Hello JS '+arr.toString());
+VM1836:2 Hello JS 10,20
+undefined
+var obj = {id:1001, name:'Ram'};
+console.log('Hello JS '+obj.toString());
+VM1899:2 Hello JS [object Object]
+undefined
+console.log(obj);
+VM1945:1 {id: 1001, name: "Ram"}
+undefined
+function show(){
+    console.log("I am Show ",arguments);
+}
+undefined
+show(10,20);
+VM2026:2 I am Show  Arguments(2) [10, 20, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+undefined
+show(1);
+VM2026:2 I am Show  Arguments [1, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+undefined
+function show(){
+    console.log("I am Show ",arguments.length);
+}
+undefined
+show(1);
+VM2102:2 I am Show  1
+undefined
+show(10,20);
+VM2102:2 I am Show  2
+undefined
+show(10,20,30, true, "Ram");
+VM2102:2 I am Show  5
+undefined
+function show(){
+    //console.log("I am Show ",arguments.length);
+var sum = 0;
+for(var i = 0; i<arguments.length; i++){
+sum+=arguments[i];
+}
+return sum;
+}
+undefined
+show();
+0
+show(10,20);
+30
+show(1,2,3,4,5,6,7,8,9,10);
+55
+console.dir(show);
+VM2568:1 ƒ show()arguments: nullcaller: nulllength: 0name: "show"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM2338:1[[Scopes]]: Scopes[1]
+undefined
+function show(){
+    //console.log("I am Show ",arguments.length);
+var sum = 0;
+console.log(typeof arguments);
+for(var i = 0; i<arguments.length; i++){
+sum+=arguments[i];
+}
+return sum;
+}
+undefined
+show(1,2,3,4,5,6,7,8,9,10);
+VM2645:4 object
+55
+var arr = [10,20];
+undefined
+typeof arr;
+"object"
+typeof {};
+"object"
+typeof window;
+"object"
+arr instanceof Array;
+true
+arr instanceof Window;
+false
+typeof Array;
+"function"
+typeof Window;
+"function"
+function show(){
+    //console.log("I am Show ",arguments.length);
+var sum = 0;
+console.log(typeof arguments);
+console.log(arguments instanceof Array);
+for(var i = 0; i<arguments.length; i++){
+sum+=arguments[i];
+}
+return sum;
+}
+undefined
+show(1,2,3,4,5,6,7,8,9,10);
+VM3002:4 object
+VM3002:5 false
+55
+arr;
+(2) [10, 20]
+show(1,2,3,4,5,6,"7",8,9,10);
+VM3002:4 object
+VM3002:5 false
+"2178910"
+function show(){
+    //console.log("I am Show ",arguments.length);
+var sum = 0;
+console.log(typeof arguments);
+console.log(arguments instanceof Array);
+for(var i = 0; i<arguments.length; i++){
+sum+=parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+show(1,2,3,4,5,6,"7",8,9,10);
+VM3122:4 object
+VM3122:5 false
+55
+show(1,"2",3,"4",5,6,"7",8,9,10);
+VM3122:4 object
+VM3122:5 false
+55
+show(1,"2",3,"4","five",6,"7",8,9,10);
+VM3122:4 object
+VM3122:5 false
+NaN
+parseInt("five") + 100
+NaN
+function show(){
+    //console.log("I am Show ",arguments.length);
+var sum = 0;
+console.log(typeof arguments);
+console.log(arguments instanceof Array);
+for(var i = 0; i<arguments.length; i++){
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+show(1,"2",3,"4","five",6,"7",8,9,10);
+VM3275:4 object
+VM3275:5 false
+50
+function firstNumber(){
+return 1000;
+}
+undefined
+function secondNumber(){
+return 2000;
+}
+undefined
+show(firstNumber , secondNumber, 10 , "Hello","20",30);
+VM3275:4 object
+VM3275:5 false
+60
+function show(){
+    //console.log("I am Show ",arguments.length);
+var sum = 0;
+console.log(typeof arguments);
+console.log(arguments instanceof Array);
+for(var i = 0; i<arguments.length; i++){
+if(typeof arguments[i] =="function"){
+arguments[i] = arguments[i]();
+}
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+show(firstNumber , secondNumber, 10 , "Hello","20",30);
+VM3732:4 object
+VM3732:5 false
+3060
+//show([firstNumber,10,"20","ten"] , secondNumber, 10 , "Hello","20",30);
+undefined
+function jQuery(){
+console.log(arguments);
+}
+undefined
+jQuery(document);
+VM3916:2 Arguments [document, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+undefined
+jQuery("#b1");
+VM3916:2 Arguments ["#b1", callee: ƒ, Symbol(Symbol.iterator): ƒ]
+undefined
+jQuery([10,20]);
+VM3916:2 Arguments [Array(2), callee: ƒ, Symbol(Symbol.iterator): ƒ]
+undefined
+var $ = jQuery;
+undefined
+$(document);
+VM3916:2 Arguments [document, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+undefined
