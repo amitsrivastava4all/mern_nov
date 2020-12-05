@@ -1,0 +1,105 @@
+const songs = ["It's My Life","Bang Bang"];
+undefined
+songs.push("Boom Boom");
+3
+songs = [];
+
+VM538:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:7
+(anonymous) @ VM538:1
+function addASong(songName){
+return songs.push(songName);
+}
+undefined
+addASong("ABC");
+4
+songs;
+(4) ["It's My Life", "Bang Bang", "Boom Boom", "ABC"]
+function isSongExist(songName){
+    for(var i=0; i<songs.length; i++){
+        if(songs[i].includes(songName)){
+            return true;
+    }
+}
+return false;
+}
+undefined
+function addASong(songName){
+if(isSongExist(songName)){
+    return false;
+}
+else{
+songs.push(songName);
+return true;
+}
+
+}
+undefined
+addASong("Boom Boom");
+false
+addASong("TTT");
+true
+songs;
+(5) ["It's My Life", "Bang Bang", "Boom Boom", "ABC", "TTT"]
+songs;
+(5) ["It's My Life", "Bang Bang", "Boom Boom", "ABC", "TTT"]
+songs.indexOf("Boom Boom");
+2
+songs.indexOf("ghdfjkghjfdk");
+-1
+function isSongExist(songName){
+    for(var i=0; i<songs.length; i++){
+        if(songs[i].includes(songName)){
+            return true;
+    }
+}
+return false;
+}
+undefined
+var f = 100;
+undefined
+window.f;
+100
+function testScope(){
+console.log(msg);
+myName = "Brain Mentors";
+var msg = "Hello";
+if(10>2){
+let d = "Hi";
+}
+}
+undefined
+myName;
+VM1692:1 Uncaught ReferenceError: myName is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1692:1
+testScope();
+VM1671:2 undefined
+undefined
+myName;
+"Brain Mentors"
+window.myName;
+"Brain Mentors"
+msg;
+VM1816:1 Uncaught ReferenceError: msg is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1816:1
+function testScope(){
+console.log(msg);
+myName = "Brain Mentors";
+var msg = "Hello";
+if(10>2){
+let d = "Hi";
+}
+console.log(d);
+}
+undefined
+testScope();
+VM1849:2 undefined
+VM1849:8 Uncaught ReferenceError: d is not defined
+    at testScope (<anonymous>:8:13)
+    at <anonymous>:1:1
+testScope @ VM1849:8
+(anonymous) @ VM1871:1
+var d = "Amit";
+undefined
