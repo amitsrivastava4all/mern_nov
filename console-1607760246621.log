@@ -1,0 +1,383 @@
+var arr = [10,20,30];
+undefined
+arr instanceof Array;
+true
+typeof Array
+"function"
+Array;
+ƒ Array() { [native code] }
+console.dir(Array);
+VM251:1 ƒ Array()arguments: (...)caller: (...)from: ƒ from()isArray: ƒ isArray()length: 1name: "Array"of: ƒ of()prototype: Array(0)concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {copyWithin: true, entries: true, fill: true, find: true, findIndex: true, …}__proto__: constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()Symbol(Symbol.species): (...)get Symbol(Symbol.species): ƒ [Symbol.species]()__proto__: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: Object[[FunctionLocation]]: <unknown>[[Scopes]]: Scopes[0][[Scopes]]: Scopes[0]
+undefined
+function show(){
+console.log("I am Show ");
+}
+undefined
+show();
+VM396:2 I am Show 
+undefined
+var d = new show();
+VM396:2 I am Show 
+undefined
+var x = 1000;
+function disp(x){
+x = x + 10;
+    console.log('X is ',x, ' X Window ',window.x);
+}
+console.log('X is ',x);
+disp(10);
+VM729:6 X is  1000
+VM729:4 X is  20  X Window  1000
+undefined
+x;
+1000
+typeof x;
+"number"
+x();
+VM778:1 Uncaught TypeError: x is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM778:1
+var obj = null;
+undefined
+typeof obj;
+"object"
+var ff ;
+undefined
+typeof ff;
+"undefined"
+obj.x =1000;
+VM919:1 Uncaught TypeError: Cannot set property 'x' of null
+    at <anonymous>:1:7
+(anonymous) @ VM919:1
+obj.y;
+VM941:1 Uncaught TypeError: Cannot read property 'y' of null
+    at <anonymous>:1:5
+(anonymous) @ VM941:1
+typeof obj;
+"object"
+function test(){
+console.log(arguments.length);
+}
+undefined
+test(10,20);
+VM1088:2 2
+undefined
+test();
+VM1088:2 0
+undefined
+test(1,2,3,4,5);
+VM1088:2 5
+undefined
+console.dir(test);
+VM1261:1 ƒ test()arguments: nullcaller: nulllength: 0name: "test"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM1088:1[[Scopes]]: Scopes[1]
+undefined
+function disp(...arg){
+    console.log(arg);
+}
+undefined
+disp(10,20);
+VM1370:2 (2) [10, 20]
+undefined
+disp(10,20,30);
+VM1370:2 (3) [10, 20, 30]
+undefined
+function disp(...arg){
+    console.log(arg);
+    console.log(arg instanceof Array);
+}
+undefined
+disp(10,20,30);
+VM1474:2 (3) [10, 20, 30]
+VM1474:3 true
+undefined
+function disp(...arg){
+    console.log(arg);
+    console.log(arg instanceof Array);
+    console.log(arguments instanceof Array);
+}
+undefined
+disp(10,20,30);
+VM1581:2 (3) [10, 20, 30]
+VM1581:3 true
+VM1581:4 false
+undefined
+function disp(...a){
+    console.log(a);
+    console.log(a instanceof Array);
+    console.log(arguments instanceof Array);
+}
+undefined
+disp(10,20,30,"Amit","Brain Mentors");
+VM1617:2 (5) [10, 20, 30, "Amit", "Brain Mentors"]
+VM1617:3 true
+VM1617:4 false
+undefined
+function disp(...a){
+    console.log(a);
+    console.log(a instanceof Array);
+    console.log(arguments instanceof Array);
+    
+for(var i =0; i<arguments.length; i++){
+ console.log(arguments[i]);   
+}
+}
+undefined
+disp(10,20,30,"Amit","Brain Mentors");
+VM1779:2 (5) [10, 20, 30, "Amit", "Brain Mentors"]
+VM1779:3 true
+VM1779:4 false
+VM1779:7 10
+VM1779:7 20
+VM1779:7 30
+VM1779:7 Amit
+VM1779:7 Brain Mentors
+undefined
+var d = [10,20,30,40,50];
+undefined
+d.forEach(function(element){
+console.log(element);
+});
+VM1930:2 10
+VM1930:2 20
+VM1930:2 30
+VM1930:2 40
+VM1930:2 50
+undefined
+function disp(...a){
+    console.log(a);
+    console.log(a instanceof Array);
+    console.log(arguments instanceof Array);
+    arguments.forEach(function(ele){
+    console.log(ele);
+});
+/*for(var i =0; i<arguments.length; i++){
+ console.log(arguments[i]);
+}*/
+}
+undefined
+disp(10,20,30,"Amit","Brain Mentors");
+VM2012:2 (5) [10, 20, 30, "Amit", "Brain Mentors"]
+VM2012:3 true
+VM2012:4 false
+VM2012:5 Uncaught TypeError: arguments.forEach is not a function
+    at disp (<anonymous>:5:15)
+    at <anonymous>:1:1
+disp @ VM2012:5
+(anonymous) @ VM2021:1
+function disp(...a){
+    console.log(a);
+    console.log(a instanceof Array);
+    console.log(arguments instanceof Array);
+    a.forEach(function(ele){
+    console.log(ele);
+});
+/*for(var i =0; i<arguments.length; i++){
+ console.log(arguments[i]);
+}*/
+}
+undefined
+disp(10,20,30,"Amit","Brain Mentors");
+VM2041:2 (5) [10, 20, 30, "Amit", "Brain Mentors"]
+VM2041:3 true
+VM2041:4 false
+VM2041:6 10
+VM2041:6 20
+VM2041:6 30
+VM2041:6 Amit
+VM2041:6 Brain Mentors
+undefined
+function disp(...a){
+    console.log(a);
+    console.log(a instanceof Array);
+    console.log(arguments instanceof Array);
+Array.prototype.forEach.call(arguments, function(ele){
+console.log(ele);
+});
+    /*arguments.forEach(function(ele){
+    console.log(ele);
+});*/
+/*for(var i =0; i<arguments.length; i++){
+ console.log(arguments[i]);
+}*/
+}
+undefined
+disp(10,20,30,"Amit","Brain Mentors");
+VM2217:2 (5) [10, 20, 30, "Amit", "Brain Mentors"]
+VM2217:3 true
+VM2217:4 false
+VM2217:6 10
+VM2217:6 20
+VM2217:6 30
+VM2217:6 Amit
+VM2217:6 Brain Mentors
+undefined
+var dd = [10,20,30];
+undefined
+var ee = [90,100,120];
+undefined
+var mm = [dd,ee];
+undefined
+var k = [];
+for(var i of dd){
+k.push(i);
+}
+for(var j of ee){
+k.push(j);
+}
+6
+k;
+(6) [10, 20, 30, 90, 100, 120]
+mm;
+(2) [Array(3), Array(3)]
+mm[0];
+(3) [10, 20, 30]
+mm[0][0];
+10
+k[0];
+10
+var f1 = [...dd,...ee];
+undefined
+f1;
+(6) [10, 20, 30, 90, 100, 120]
+var f1 = [...dd,...ee,[90,1000,2000]];
+undefined
+var f1 = [...dd,...ee,...[90,1000,2000]];
+undefined
+f1;
+(9) [10, 20, 30, 90, 100, 120, 90, 1000, 2000]
+function add(x,y){
+return x + y;
+}
+undefined
+add(100,200);
+300
+add(100);
+NaN
+add();
+NaN
+function add(x=0,y=0){
+return x + y;
+}
+undefined
+add();
+0
+add(10);
+10
+add(10,20);
+30
+add(10);
+10
+function add(x,y){
+x = x || 0;
+y = y || 0;
+return x + y;
+}
+undefined
+add();
+0
+add(10);
+10
+add(10,20);
+30
+var name = "";
+undefined
+if(name.length==0){
+console.log("Name is Blank");
+}
+
+VM3183:2 Name is Blank
+undefined
+name = undefined;
+undefined
+if(name.length==0){
+console.log("Name is Blank");
+}
+
+undefined
+if(typeof name==="undefined" || name.length==0){
+console.log("Name is Blank");
+}
+
+undefined
+name;
+"undefined"
+name = undefined;
+undefined
+if(typeof name==="undefined" || name.length==0){
+console.log("Name is Blank");
+}
+
+undefined
+ name;
+"undefined"
+if(typeof name=="undefined" || name.length==0){
+console.log("Name is Blank");
+}
+
+undefined
+typeof name;
+"string"
+var myName ;
+undefined
+if(typeof myName=="undefined" || myName.length==0){
+console.log("Name is Blank");
+}
+
+VM3456:2 Name is Blank
+undefined
+typeof myName;
+"undefined"
+myName = null;
+null
+if(typeof myName=="undefined" || myName==null || myName.length==0){
+console.log("Name is Blank");
+}
+
+VM3568:2 Name is Blank
+undefined
+if(myName){
+console.log("Truthy Name is There");
+}
+else{
+console.log("Falsy Name is Not There ");
+}
+VM3701:5 Falsy Name is Not There 
+undefined
+myName;
+null
+myName = "";
+""
+if(myName){
+console.log("Truthy Name is There");
+}
+else{
+console.log("Falsy Name is Not There ");
+}
+VM3741:5 Falsy Name is Not There 
+undefined
+myName = undefined;
+undefined
+if(myName){
+console.log("Truthy Name is There");
+}
+else{
+console.log("Falsy Name is Not There ");
+}
+VM3779:5 Falsy Name is Not There 
+undefined
+myName = "Brain Mentors";
+"Brain Mentors"
+if(myName){
+console.log("Truthy Name is There");
+}
+else{
+console.log("Falsy Name is Not There ");
+}
+VM3829:2 Truthy Name is There
+undefined
+function add(x,y){
+x = x || 0;
+y = y || 0;
+return x + y;
+}
+undefined
