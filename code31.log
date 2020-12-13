@@ -1,0 +1,217 @@
+class Customer{
+}
+undefined
+typeof Customer;
+"function"
+var d = function(){
+console.log("D Function ");
+}
+undefined
+typeof d;
+"function"
+d();
+VM188:2 D Function 
+undefined
+(function(){
+console.log("IIFE ");
+})();
+VM287:2 IIFE 
+undefined
+var e = (function(x,y){
+//console.log("IIFE ");
+var add = function(){
+var z = x  + y;
+}
+var sub = function(){
+var z = x - y;
+}
+return [add, sub];
+})(100,200);
+undefined
+e;
+(2) [ƒ, ƒ]
+var e = (function(x,y){
+//console.log("IIFE ");
+var add = function(){
+var z = x  + y;
+return z;
+}
+var sub = function(){
+var z = x - y;
+return z;
+
+}
+return [add, sub];
+})(100,200);
+undefined
+e;
+(2) [ƒ, ƒ]
+e[0]();
+300
+e[1]();
+-100
+var e = (function(x,y){
+//console.log("IIFE ");
+var add = function addition(){
+var z = x  + y;
+return z;
+}
+var sub = function subtract(){
+var z = x - y;
+return z;
+
+}
+return [add, sub];
+})(100,200);
+undefined
+e;
+(2) [ƒ, ƒ]0: ƒ addition()1: ƒ subtract()length: 2__proto__: Array(0)
+e[0].name
+"addition"
+e[0]();
+300
+e[0]addition();
+VM664:1 Uncaught SyntaxError: Unexpected identifier
+window;
+Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+var e = (function(x,y){
+//console.log("IIFE ");
+var add = function addition(){
+var z = x  + y;
+return z;
+}
+var sub = function subtract(){
+var z = x - y;
+return z;
+
+}
+return {add, sub};
+})(100,200);
+undefined
+e;
+{add: ƒ, sub: ƒ}
+var e = (function(x,y){
+//console.log("IIFE ");
+var add = function addition(){
+var z = x  + y;
+return z;
+}
+var sub = function subtract(){
+var z = x - y;
+return z;
+
+}
+return {"addition":add, "subtract":sub};
+})(100,200);
+undefined
+e["addition"]();
+300
+var d = {};
+
+
+undefined
+d["mykey"];
+undefined
+d["mykey"] = 100;
+100
+d["mykey"];
+100
+d;
+{mykey: 100}
+var cache = {};
+function memo(num){
+    if(cache[num]){
+console.log('Value come from the Cache ',cache[num]);
+}
+else{
+for(let i =1;i<=100000; i++){
+for(let j = 1; j<=10000; j++){}
+}
+cache[num] = num **3;
+console.log('Not from Cache ',num**3);
+}
+}
+undefined
+cache;
+{}
+memo(9);
+VM1411:11 Not from Cache  729
+undefined
+cache;
+{9: 729}
+memo(9);
+VM1411:4 Value come from the Cache  729
+undefined
+memo(20);
+VM1411:11 Not from Cache  8000
+undefined
+memo(20);
+VM1411:4 Value come from the Cache  8000
+undefined
+cache;
+{9: 729, 20: 8000}
+function show(){
+var x = "Hi";
+return function(){
+var y = "Ok";
+    return function(){
+        return "Hello"+x+y;
+}
+}
+VM1674:8 Uncaught SyntaxError: Unexpected end of input
+function show(){
+var x = "Hi";
+return function(){
+var y = "Ok";
+    return function(){
+        return "Hello"+x+y;
+}
+}
+}
+undefined
+show()()();
+"HelloHiOk"
+var arr = [10,20,30];
+undefined
+for(let i = 0 ; i<arr.length; i++){
+console.log(arr[i));
+}
+VM1879:2 Uncaught SyntaxError: Unexpected token ')'
+for(let i = 0 ; i<arr.length; i++){
+console.log(arr[i]);
+}
+VM1889:2 10
+VM1889:2 20
+VM1889:2 30
+undefined
+for(let i of arr){
+console.log(i);
+}
+VM1960:2 10
+VM1960:2 20
+VM1960:2 30
+undefined
+arr.forEach(function(ele){console.log('Element is ',ele);});
+VM2081:1 Element is  10
+VM2081:1 Element is  20
+VM2081:1 Element is  30
+undefined
+typeof arr.forEach
+"function"
+function hof(){
+console.log("HOF ");
+return function(){
+console.log("I am Inner ");
+}
+}
+undefined
+var e = hof();
+VM2274:2 HOF 
+undefined
+e;
+ƒ (){
+console.log("I am Inner ");
+}
+e();
+VM2274:4 I am Inner 
+undefined
