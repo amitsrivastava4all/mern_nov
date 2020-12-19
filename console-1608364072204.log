@@ -1,0 +1,242 @@
+function show(){
+if(10>2){
+let x = 100;
+console.log('X is ',x);
+}
+console.log('After Block ',x);
+}
+undefined
+show();
+VM193:4 X is  100
+VM193:6 Uncaught ReferenceError: x is not defined
+    at show (<anonymous>:6:28)
+    at <anonymous>:1:1
+show @ VM193:6
+(anonymous) @ VM214:1
+function show(){
+// var x;
+if(10>2){
+var x = 100;
+console.log('X is ',x);
+}
+console.log('After Block ',x);
+}
+undefined
+show();
+VM235:5 X is  100
+VM235:7 After Block  100
+undefined
+function show(){
+console.log('Start X is ',x);
+// var x;
+if(10>2){
+var x = 100;
+console.log('X is ',x);
+}
+console.log('After Block ',x);
+}
+undefined
+show();
+VM286:2 Start X is  undefined
+VM286:6 X is  100
+VM286:8 After Block  100
+undefined
+function show(){
+console.log('Start X is ',x);
+// var x;
+if(10>2){
+(function(){
+var x = 100;
+console.log('X is ',x);
+})();
+
+}
+console.log('After Block ',x);
+}
+undefined
+show();
+VM329:2 Uncaught ReferenceError: x is not defined
+    at show (<anonymous>:2:27)
+    at <anonymous>:1:1
+show @ VM329:2
+(anonymous) @ VM355:1
+function show(){
+//console.log('Start X is ',x);
+// var x;
+if(10>2){
+(function(){
+var x = 100;
+console.log('X is ',x);
+})();
+
+}
+console.log('After Block ',x);
+}
+undefined
+show();
+VM363:7 X is  100
+VM363:11 Uncaught ReferenceError: x is not defined
+    at show (<anonymous>:11:28)
+    at <anonymous>:1:1
+show @ VM363:11
+(anonymous) @ VM369:1
+function show(){
+//console.log('Start X is ',x);
+// var x;
+if(10>2){
+(function(){
+var x = 100;
+console.log('X is ',x);
+})();
+
+}
+//console.log('After Block ',x);
+}
+undefined
+function test(){
+var x;
+yy = 200;
+}
+undefined
+test();
+undefined
+yy;
+200
+window.yy;
+200
+let mm = 1000;
+undefined
+window.mm;
+undefined
+let mm ;
+mm = 1000;
+1000
+mm;
+1000
+window.mm;
+undefined
+function test(){
+console.log(b);
+if(10>2){
+let b = 1000;
+console.log(b);
+}
+console.log(b);
+}
+undefined
+const MAX = 100;
+undefined
+MAX++;
+VM926:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:4
+(anonymous) @ VM926:1
+const arr = [10,20,30];
+undefined
+arr[0] = 1000;
+1000
+arr;
+(3) [1000, 20, 30]
+arr = [55,66];
+VM1059:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:5
+(anonymous) @ VM1059:1
+var b1 ;
+console.log(typeof b1);
+b1 = (x)=>x*10;
+VM1220:2 undefined
+(x)=>x*10
+typeof b1;
+"function"
+b1;
+(x)=>x*10
+b1(100);
+1000
+function myFunc(){
+console.log('I am this ',this);
+}
+undefined
+window.myFunc;
+ƒ myFunc(){
+console.log('I am this ',this);
+}
+window.myFunc();
+VM1379:2 I am this  Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+myFunc(); // window.myFunc();
+VM1379:2 I am this  Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+var obj = {
+show(){
+console.log('This is ',this);
+}
+}
+undefined
+window.obj.show();
+VM1584:3 This is  {show: ƒ}
+undefined
+var obj = {
+show(){
+console.log('This is ',this);
+var d = ()=>console.log('I am this ',this);
+d();
+}
+}
+undefined
+obj.show();
+VM1844:3 This is  {show: ƒ}
+VM1844:4 I am this  {show: ƒ}show: show(){ console.log('This is ',this); var d = ()=> {…}__proto__: Object
+undefined
+show
+ƒ show(){
+//console.log('Start X is ',x);
+// var x;
+if(10>2){
+(function(){
+var x = 100;
+console.log('X is ',x);
+})();
+
+}
+//console.log('After Block ',x);
+}
+function emp(){
+console.log('This is ',this);
+}
+undefined
+var q = new emp();
+VM2027:2 This is  emp {}
+undefined
+typeof q;
+"object"
+q;
+emp {}
+q instanceof emp;
+true
+var person = ()=>console.log('This is ',this);
+
+undefined
+var n = new person();
+VM2225:1 Uncaught TypeError: person is not a constructor
+    at <anonymous>:1:9
+(anonymous) @ VM2225:1
+var ff = (...arg)=>console.log(arg);
+undefined
+ff(100,200);
+VM2318:1 (2) [100, 200]
+undefined
+var logHi=(str='hi')=>console.log(str);
+undefined
+logHi(undefined);
+VM2360:1 hi
+undefined
+logHi(null);
+VM2360:1 null
+undefined
+var logHi=(str='hi')=>console.log(str);
+undefined
+var arr = [10,20,30];
+VM2514:1 Uncaught SyntaxError: Identifier 'arr' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM2514:1
+var arr1 = [10,20,30];
+undefined
