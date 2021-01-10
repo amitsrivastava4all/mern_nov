@@ -1,0 +1,48 @@
+function Expense(id, name, cost){
+var obj = {};
+obj.id = id;
+obj.name = name;
+obj.cost = cost;
+return obj;
+}
+undefined
+typeof Expense;
+"function"
+var e = Expense(1001, "Movie",1000);
+undefined
+e;
+{id: 1001, name: "Movie", cost: 1000}
+typeof e;
+"object"
+e instanceof Expense;
+false
+e instanceof Object;
+true
+function Expense(id, name, cost){
+//var this = {};
+this.id = id;
+this.name = name;
+this.cost = cost;
+//return obj; return this;
+}
+undefined
+var e = new Expense(1001, "Movie",2000);
+undefined
+e;
+Expense {id: 1001, name: "Movie", cost: 2000}
+e instanceof Expense;
+true
+e instanceof Object;
+true
+function whoIam(){
+console.log("This is ",this);
+}
+undefined
+whoIam();
+VM833:2 This is  Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+var w = new whoIam();
+VM833:2 This is  whoIam {}
+undefined
+w;
+whoIam {}
