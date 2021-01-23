@@ -1,0 +1,41 @@
+console.log("Start");
+setTimeout(function(){
+console.log("i am Done....");
+},7000);
+console.log("End ");
+VM212:1 Start
+VM212:5 End 
+undefined
+VM212:3 i am Done....
+console.log("Start");
+var t = show();
+console.log("End ",t);
+function show(){
+    setTimeout(()=>{
+console.log("I am Inside Show");
+return "I am DONE ... ";
+},7000);
+//return undefined;
+}
+VM560:1 Start
+VM560:3 End  undefined
+undefined
+VM560:6 I am Inside Show
+console.log("Start");
+var t = show(giveMeResult);
+console.log("End ",t);
+function show(fn){
+    setTimeout(()=>{
+console.log("I am Inside Show");
+fn( "I am DONE ... ");
+},7000);
+//return undefined;
+}
+function giveMeResult(data){
+console.log('Result is ',data);
+}
+VM733:1 Start
+VM733:3 End  undefined
+undefined
+VM733:6 I am Inside Show
+VM733:12 Result is  I am DONE ... 
