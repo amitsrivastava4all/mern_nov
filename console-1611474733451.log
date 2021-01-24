@@ -1,0 +1,318 @@
+console.log('Start');
+doProcess(afterProcess, fail);
+console.log('End ');
+//for(let i =1; i<=10000000;i++){}
+function afterProcess(result){
+console.log(result);
+}
+function fail(err){
+console.log(err);
+}
+function doProcess(resolve,reject){
+    setTimeout(()=>{
+    if(10>2){
+    resolve('I am Done');
+    }
+    else{
+    reject('Error Occur');
+}
+
+},7000);
+}
+VM715:1 Start
+VM715:3 End 
+undefined
+VM715:6 I am Done
+console.log('Start');
+doProcess(afterProcess, fail);
+console.log('End ');
+//for(let i =1; i<=10000000;i++){}
+function afterProcess(result){
+console.log(result);
+}
+function fail(err){
+console.log(err);
+}
+function doProcess(resolve,reject){
+    setTimeout(()=>{
+    if(10>200){
+    resolve('I am Done');
+    }
+    else{
+    reject('Error Occur');
+}
+
+},7000);
+}
+VM730:1 Start
+VM730:3 End 
+undefined
+VM730:9 Error Occur
+Promise;
+ƒ Promise() { [native code] }
+window.Promise
+ƒ Promise() { [native code] }
+function doProcess(){
+
+var pr = new Promise((resolve, reject)=>{
+ setTimeout(()=>{
+    if(10>200){
+    resolve('I am Done');
+    }
+    else{
+    reject('Error Occur');
+}
+
+},7000);
+});
+   return pr;
+}
+
+undefined
+console.log('Start');
+var p = doProcess();
+console.log('P is ',p);
+p.then(data=>console.log(data)).catch(err=>console.log(err));
+console.log('Ends');
+VM1291:1 Start
+VM1291:3 P is  Promise {<pending>}
+VM1291:5 Ends
+undefined
+VM1291:4 Error Occur
+p;
+Promise {<rejected>: "Error Occur"}
+typeof p;
+"object"
+function doProcess(){
+
+var pr = new Promise((resolve, reject)=>{
+ setTimeout(()=>{
+    if(10>2){
+    resolve('I am Done');
+    }
+    else{
+    reject('Error Occur');
+}
+
+},7000);
+});
+   return pr;
+}
+
+undefined
+console.log('Start');
+var p = doProcess();
+console.log('P is ',p);
+p.then(data=>console.log(data)).catch(err=>console.log(err));
+console.log('Ends');
+VM1343:1 Start
+VM1343:3 P is  Promise {<pending>}
+VM1343:5 Ends
+undefined
+p;
+Promise {<pending>}
+VM1343:4 I am Done
+Promise
+ƒ Promise() { [native code] }
+function square(num){
+    var p = new Promise((res,rej)=>{
+setTimeout((num)=>resolve(num*num),5000);
+});
+   return p; 
+    
+}
+undefined
+function cube(num){
+    var p = new Promise((res,rej)=>{
+setTimeout((num)=>resolve(num**3),7000);
+});
+   return p; 
+    
+}
+undefined
+var p= square(5);
+p.then((data)=>{
+var p2 = cube(data);
+p2.then(result=>console.log('Cube is ',result)).catch(err=>console.log('Error in Cube ',err));
+}).catch(e=>console.log('Square ',e);
+VM2188:5 Uncaught SyntaxError: missing ) after argument list
+var p= square(5);
+p.then((data)=>{
+var p2 = cube(data);
+p2.then(result=>console.log('Cube is ',result)).catch(err=>console.log('Error in Cube ',err));
+}).catch(e=>console.log('Square ',e));
+Promise {<pending>}
+VM1661:3 Uncaught ReferenceError: resolve is not defined
+    at <anonymous>:3:19
+(anonymous) @ VM1661:3
+setTimeout (async)
+(anonymous) @ VM1661:3
+square @ VM1661:2
+(anonymous) @ VM2196:1
+function cube(num){
+    var p = new Promise((res,rej)=>{
+setTimeout((num)=>res(num**3),7000);
+});
+   return p; 
+    
+}
+undefined
+function square(num){
+    var p = new Promise((res,rej)=>{
+setTimeout((num)=>res(num*num),5000);
+});
+   return p; 
+    
+}
+undefined
+var p= square(5);
+p.then((data)=>{
+var p2 = cube(data);
+p2.then(result=>console.log('Cube is ',result)).catch(err=>console.log('Error in Cube ',err));
+}).catch(e=>console.log('Square ',e));
+Promise {<pending>}
+VM2254:4 Cube is  NaN
+var p= square(5);
+p.then((data)=>{
+console.log('Sq Result is ',data);
+var p2 = cube(data);
+p2.then(result=>console.log('Cube is ',result)).catch(err=>console.log('Error in Cube ',err));
+}).catch(e=>console.log('Square ',e));
+Promise {<pending>}
+VM2305:3 Sq Result is  NaN
+VM2305:5 Cube is  NaN
+function square(num){
+    var p = new Promise((res,rej)=>{
+setTimeout(()=>{
+resolve(num*num)
+
+},5000);
+});
+   return p; 
+    
+}
+undefined
+function cube(num){
+    var p = new Promise((res,rej)=>{
+setTimeout(()=>res(num**3),7000);
+});
+   return p; 
+    
+}
+undefined
+var p= square(5);
+p.then((data)=>{
+console.log('Sq Result is ',data);
+var p2 = cube(data);
+p2.then(result=>console.log('Cube is ',result)).catch(err=>console.log('Error in Cube ',err));
+}).catch(e=>console.log('Square ',e));
+Promise {<pending>}
+VM2355:4 Uncaught ReferenceError: resolve is not defined
+    at <anonymous>:4:1
+(anonymous) @ VM2355:4
+setTimeout (async)
+(anonymous) @ VM2355:3
+square @ VM2355:2
+(anonymous) @ VM2378:1
+function cube(num){
+    var p = new Promise((res,rej)=>{
+setTimeout(()=>res(num**3),7000);
+});
+   return p; 
+    
+}
+undefined
+function square(num){
+    var p = new Promise((res,rej)=>{
+setTimeout(()=>{
+res(num*num)
+
+},5000);
+});
+   return p; 
+    
+}
+undefined
+var p= square(5);
+p.then((data)=>{
+console.log('Sq Result is ',data);
+var p2 = cube(data);
+p2.then(result=>console.log('Cube is ',result)).catch(err=>console.log('Error in Cube ',err));
+}).catch(e=>console.log('Square ',e));
+Promise {<pending>}
+VM2401:3 Sq Result is  25
+VM2401:5 Cube is  15625
+async function compute(){
+try{
+console.log('1');
+let result =  await square(5) ;
+console.log('2  =====>   ',result);
+let finalR = await cube(result);
+console.log('3 ====> ',finalR);
+}
+catch(e){
+console.log(e);
+}
+ 
+}
+undefined
+compute();
+VM2738:3 1
+Promise {<pending>}
+VM2738:5 2  =====>    25
+VM2738:7 3 ====>  15625
+var g = Promise.all(cube(3),cube(4),cube(5));
+undefined
+VM2867:1 Uncaught (in promise) TypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))
+    at Function.all (<anonymous>)
+    at <anonymous>:1:17
+(anonymous) @ VM2867:1
+var g = Promise.all([cube(3),cube(4),cube(5)]);
+undefined
+g;
+Promise {<fulfilled>: Array(3)}
+var g = Promise.all([cube(3),cube(4),cube(5)]);
+g;
+Promise {<pending>}
+var g = Promise.all([cube(3),cube(4),cube(5)]);
+g;
+g.then(r=>console.log(r)).catch(e=>console.log(e));
+Promise {<pending>}
+VM3081:3 (3) [27, 64, 125]
+Worker.prototype.onmessage
+VM3169:1 Uncaught TypeError: Illegal invocation
+    at <anonymous>:1:18
+(anonymous) @ VM3169:1
+function cube(num){
+    var p = new Promise((res,rej)=>{
+setTimeout(()=>{
+if(num<5){
+res(num**3);
+}
+else{
+rej('Some Error Occur in Cube ');
+}
+
+},7000);
+});
+   return p; 
+    
+}
+undefined
+var g = Promise.all([cube(3),cube(4),cube(7)]);
+g;
+g.then(r=>console.log(r)).catch(e=>console.log(e));
+Promise {<pending>}
+VM3376:3 Some Error Occur in Cube 
+g;
+Promise {<rejected>: "Some Error Occur in Cube "}
+var g = Promise.all([cube(7),cube(4),cube(3)]);
+g;
+g.then(r=>console.log(r)).catch(e=>console.log(e));
+Promise {<pending>}
+VM3405:3 Some Error Occur in Cube 
+var g = Promise.allSettled([cube(7),cube(4),cube(3)]);
+g;
+g.then(r=>console.log(r)).catch(e=>console.log(e));
+Promise {<pending>}
+VM3416:3 (3) [{…}, {…}, {…}]0: {status: "rejected", reason: "Some Error Occur in Cube "}1: {status: "fulfilled", value: 64}2: {status: "fulfilled", value: 27}length: 3__proto__: Array(0)
