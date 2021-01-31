@@ -1,0 +1,106 @@
+class B{
+static test(){
+console.log('I am Static');
+}
+#show(){
+console.log('I am Private');
+}
+show2(){
+this.#show();
+console.log('I am public ');
+}
+}
+B.test();
+
+
+class Person1{
+constructor(id,name){
+    this.id= id;
+    this.name = name;
+}
+print(){
+console.log(`Id is ${this.id} Name is ${this.name}`);
+}
+}
+class Emp extends Person1{
+constructor(salary, bonus, id, name){
+    super(id,name);
+    this.salary = salary;
+    this.bonus = bonus;
+}
+disp(){
+this.print();
+console.log(`Salary is ${this.salary} Bonus is ${this.bonus}`);
+}
+}
+var emp = new Emp(44234,433,1002,'Shyam');
+emp.disp();
+function Person(id, name){
+    console.log('Person Cons Call');
+    this.id = id;    
+    this.name = name;
+}
+Person.prototype.print=function(){
+console.log(`Id is ${this.id} Name is ${this.name}`);
+}
+function Employee(salary, bonus,id, name){
+Person.call(this,id,name);
+console.log('Emp cons call');
+this.salary = salary;
+this.bonus = bonus;
+}
+Employee.prototype.__proto__=Person.prototype;
+Employee.prototype.disp=function(){
+//Person.call(this);
+this.print();
+console.log(`Salary ${this.salary} bonus ${this.bonus}`);
+}
+var ram = new Employee(9000,900,1001,'Ram');
+ram.disp();
+var obj2 = {
+show(){
+console.log(this);
+return this;
+}
+}
+window.obj2.show();
+var obj2 = {
+show:()=>{
+console.log(this);
+return this;
+}
+}
+var obj = {
+arr:[90,100,2,11,19,21,24],
+even:[],
+odd:[],
+computeEvenOdd(){
+console.log(this);
+this.arr.forEach((element)=>{
+if(element%2==0){
+this.even.push(element);
+}
+else{
+this.odd.push(element);
+}
+});
+}
+};
+obj.computeEvenOdd();
+var obj = {
+arr:[90,100,2,11,19,21,24],
+even:[],
+odd:[],
+computeEvenOdd(){
+var that = this;
+this.arr.forEach(function(element){
+if(element%2==0){
+that.even.push(element);
+}
+else{
+that.odd.push(element);
+}
+});
+}
+};
+obj.computeEvenOdd();
