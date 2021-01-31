@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        function showCamera(){
+            let vid = document.querySelector('#vid');
+            if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
+                var promise = navigator.mediaDevices.getUserMedia({video:true});
+                promise.then(stream=>{
+                    console.log('Stream is ',stream);
+                    console.log(vid);
+                    vid.srcObject = stream;
+                    console.dir(vid);
+                    vid.play();
+                }).catch(err=>console.log('Error in Camera',err));
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="showCamera()">Camera</button>
+    <video id='vid' width="300" height="300" autoplay></video>
+</body>
+</html>
