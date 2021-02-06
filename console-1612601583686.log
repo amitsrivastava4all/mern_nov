@@ -1,0 +1,209 @@
+{} + []
+0
+[] + {}
+"[object Object]"
+function Employee(id, name, salary){
+    this.id = id;
+    this.name = name;
+    this.salary = salary;
+}
+undefined
+var ram = new Employee(1001, "Ram",9999);
+undefined
+console.log(ram);
+VM567:1 Employee {id: 1001, name: "Ram", salary: 9999}
+undefined
+console.log("Emp is "+ram);
+VM673:1 Emp is [object Object]
+undefined
+console.log("Emp is "+ram.toString());
+VM765:1 Emp is [object Object]
+undefined
+console.log(ram.toString());
+VM874:1 [object Object]
+undefined
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999}id: 1001name: "Ram"salary: 9999__proto__: constructor: ƒ Employee(id, name, salary)__proto__: constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+Employee.prototype.toString= function(){
+    return "Id "+this.id+" Name "+this.name + "Salary "+this.salary;
+}
+ƒ (){
+    return "Id "+this.id+" Name "+this.name + "Salary "+this.salary;
+}
+console.log(ram.toString());
+
+VM1121:1 Id 1001 Name RamSalary 9999
+undefined
+console.log("Emp is "+ram);
+VM1188:1 Emp is Id 1001 Name RamSalary 9999
+undefined
+function Customer(id , name , balance){
+    this.id = id;
+    this.name = name;
+    this.balance = balance;
+}
+undefined
+var ram = new Customer(1001, "Ram",90000);
+undefined
+Customer.prototype;
+{constructor: ƒ}
+typeof Customer.pro;
+"undefined"
+typeof Customer.prototype;
+"object"
+Customer.prototype.discount = function(){
+console.log(this.balance * 0.20);
+}
+ƒ (){
+console.log(this.balance * 0.20);
+}
+Customer.prototype;
+{discount: ƒ, constructor: ƒ}
+ram.discount();
+VM1743:2 18000
+undefined
+ram;
+Customer {id: 1001, name: "Ram", balance: 90000}
+var shyam = new Customer(1002, "Shyam",54545);
+undefined
+shyam;
+Customer {id: 1002, name: "Shyam", balance: 54545}
+ram.balance = 4343434;
+4343434
+ram;
+Customer {id: 1001, name: "Ram", balance: 4343434}balance: 4343434id: 1001name: "Ram"__proto__: Object
+shyam;
+Customer {id: 1002, name: "Shyam", balance: 54545}
+ram.__proto__ == Customer.prototype;
+true
+ram.id;
+1001
+ram.discount();
+VM1743:2 868686.8
+undefined
+Customer.prototype.dept = {
+    getDeptName(){
+            return "IT Dept";
+    }
+};
+{getDeptName: ƒ}
+Customer.prototype;
+{dept: {…}, discount: ƒ, constructor: ƒ}dept: getDeptName: ƒ getDeptName()__proto__: Objectdiscount: ƒ ()constructor: ƒ Customer(id , name , balance)__proto__: Object
+ram.dept.getDeptName();
+"IT Dept"
+var arr = [1000,4343,6565,756767,87878,4334,23232,43435,545,4,656,76];
+
+undefined
+var [a,b] = arr;
+undefined
+a;
+1000
+b;
+4343
+var [a,,,,b] = arr;
+undefined
+a;
+1000
+b;
+87878
+var obj = {id:191, name:'Ram',salary:8888};
+undefined
+var {name, salary} =obj;
+undefined
+name;
+"Ram"
+salary;
+8888
+function show({id, name}){
+console.log(id, name);
+}
+show(obj);
+VM2881:2 191 "Ram"
+undefined
+arr;
+(12) [1000, 4343, 6565, 756767, 87878, 4334, 23232, 43435, 545, 4, 656, 76]
+obj.salary.toLocaleString('hi-IN');
+"8,888"
+arr.map(e=>"Rs "+(e.toLocaleString('hi-IN')));
+(12) ["Rs 1,000", "Rs 4,343", "Rs 6,565", "Rs 7,56,767", "Rs 87,878", "Rs 4,334", "Rs 23,232", "Rs 43,435", "Rs 545", "Rs 4", "Rs 656", "Rs 76"]
+"abc".localeCompare("abc");
+0
+"abc".localeCompare("xyz");
+-1
+"xyz".localeCompare("abc");
+1
+"abc".includes("ab");
+true
+arr.every(e=>e>10);
+false
+arr.some(e=>e>10);
+true
+class B {
+static f = 100;
+constructor(x,y){
+    this.x = x;
+    this.y = y;
+}
+disp(){
+console.log("Disp "+this.x +" " + this.y);
+}
+}
+undefined
+B.prototype
+{constructor: ƒ, disp: ƒ}
+B.prototype.print= function (){
+console.log("AAAAAA");
+}
+ƒ (){
+console.log("AAAAAA");
+}
+B.prototype
+{print: ƒ, constructor: ƒ, disp: ƒ}
+var w = new B(100,200);
+undefined
+w.disp();
+VM3604:8 Disp 100 200
+undefined
+w.print();
+VM3773:2 AAAAAA
+undefined
+w;
+B {x: 100, y: 200}x: 100y: 200__proto__: Object
+B.__proto__ == B.prototype;
+false
+w.__proto__== B.prototype;
+true
+B.f
+100
+function Emp(){
+
+}
+undefined
+Emp.ff = 1232;
+1232
+Emp.ff;
+1232
+class V{
+
+}
+
+class V2 extends V{
+
+}
+undefined
+var name ="Amit";
+undefined
+name.toUpperCase();
+"AMIT"
+var name2 = new String("Amit");
+undefined
+name2;
+String {"Amit"}
+name;
+"Amit"
+typeof name2;
+"object"
+typeof name;
+"string"
+name.toLowerCase();
+"amit"
