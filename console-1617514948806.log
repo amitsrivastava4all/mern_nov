@@ -1,0 +1,80 @@
+const obj = {id:101, name:'Ram'};
+undefined
+for(let key in obj){
+console.log(obj[key]);
+}
+VM158:2 101
+VM158:2 Ram
+undefined
+var arr = [10,20,30,40,50];
+undefined
+for(let i = 0; i<arr.length; i++){
+console.log(arr[i]);
+}
+
+for(let a of arr){
+    console.log(a);
+}
+VM364:2 10
+VM364:2 20
+VM364:2 30
+VM364:2 40
+VM364:2 50
+VM364:6 10
+VM364:6 20
+VM364:6 30
+VM364:6 40
+VM364:6 50
+undefined
+var itr = arr.entries();
+undefined
+itr.next();
+{value: Array(2), done: false}done: falsevalue: (2) [0, 10]__proto__: Object
+itr.next();
+{value: Array(2), done: false}done: falsevalue: (2) [1, 20]__proto__: Object
+itr.next();
+{value: Array(2), done: false}
+itr.next();
+{value: Array(2), done: false}
+itr.next();
+{value: Array(2), done: false}
+itr.next();
+{value: undefined, done: true}
+arr;
+(5) [10, 20, 30, 40, 50]
+var t = arr.values();
+undefined
+t.next();
+{value: 10, done: false}
+t.next();
+{value: 20, done: false}
+t.next();
+{value: 30, done: false}
+t.next();
+{value: 40, done: false}
+t.next();
+{value: 50, done: false}
+t.next();
+{value: undefined, done: true}
+function *counter(){
+var count = 0;
+while(true){
+yield count;
+count++;
+}
+}
+undefined
+var itr= counter();
+undefined
+itr.next();
+{value: 0, done: false}
+itr.next();
+{value: 1, done: false}
+itr.next();
+{value: 2, done: false}
+itr.next();
+{value: 3, done: false}
+itr.next();
+{value: 4, done: false}
+itr.next();
+{value: 5, done: false}
