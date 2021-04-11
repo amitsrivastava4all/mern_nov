@@ -1,0 +1,121 @@
+var reg = new RegExp('Brain Mentors');
+undefined
+typeof reg;
+"object"
+reg instanceof RegExp;
+true
+typeof RegExp;
+"function"
+var reg2 = /Brain Mentors/;
+undefined
+typeof reg2;
+"object"
+reg2 instanceof RegExp;
+true
+reg;
+/Brain Mentors/
+reg.test('Hello I am Brain Mentors');
+true
+reg.test('Hello I am Brain');
+false
+var reg2 = /^Brain Mentors/;
+undefined
+reg.test('Hello I am Brain Mentors');
+true
+'Hello I am Brain Mentors'.match(reg);
+["Brain Mentors", index: 11, input: "Hello I am Brain Mentors", groups: undefined]0: "Brain Mentors"groups: undefinedindex: 11input: "Hello I am Brain Mentors"length: 1__proto__: Array(0)
+reg2.test('Hello I am Brain Mentors');
+false
+reg2.test('Brain Mentors Hello JS');
+true
+var reg2 = /Brain Mentors$/;
+undefined
+reg2.test('Brain Mentors Hello JS');
+false
+reg2.test('Hello I am Brain Mentors');
+true
+var reg2 = /^Hello Mentors$/;
+undefined
+reg2.test('Hello I am Brain Mentors');
+false
+var reg2 = /^Hello.* Mentors$/;
+undefined
+reg2.test('Hello I am Brain Mentors');
+true
+reg2=/[a-z]/
+/[a-z]/
+reg2.test('Hello I am Brain Mentors');
+true
+reg2.test('H');
+false
+reg2.test('h');
+true
+reg2.test('9');
+false
+reg2=/[a-z]{3}/
+/[a-z]{3}/
+reg2.test('abc');
+true
+reg2.test('abcd');
+true
+reg2.test('ab');
+false
+reg2=/[a-z]{3}{5}/
+VM1081:1 Uncaught SyntaxError: Invalid regular expression: /[a-z]{3}{5}/: Nothing to repeat
+    at <anonymous>:1:1
+(anonymous) @ VM1081:1
+reg2=/[a-z]{3,5}/
+/[a-z]{3,5}/
+reg2.test('abcde');
+true
+reg2.test('abcdef');
+true
+reg2.test('abcdefgdfgfg');
+true
+reg2=/[a-z]{3,5}$/
+/[a-z]{3,5}$/
+reg2.test('abcdefgdfgfg');
+true
+reg2=/[a-z].{3,5}$/
+/[a-z].{3,5}$/
+reg2.test('abcdefgdfgfg');
+true
+reg2=/[a-z][A-Z]{3,5}$/
+/[a-z][A-Z]{3,5}$/
+reg2.test('abcdefgdfgfg');
+false
+reg2.test('abCDE');
+true
+reg2.test('abCDEF');
+true
+reg2.test('abCDEFG');
+true
+reg2=/[A-Z]{3,5}$/
+/[A-Z]{3,5}$/
+reg2.test('ABCDEFGG')
+true
+reg2=/^[a-z]{3,5}$/
+/^[a-z]{3,5}$/
+reg2.test('ABCDEFGG')
+false
+reg2.test('abcdef')
+false
+reg2.test('abcde')
+true
+reg2.test('ab')
+false
+reg2.test('abc')
+true
+reg2.test('abcde')
+true
+reg2.test('abcdef')
+false
+reg2=/^[A-Z][0-9]{3,10}$/
+    
+/^[A-Z][0-9]{3,10}$/
+reg2 = /^\d{3}\w{3}\s{2}$/
+/^\d{3}\w{3}\s{2}$/
+reg2 = /^\d{3}\w+$/
+/^\d{3}\w+$/
+reg2 = /^\d{3}\w+\n\t\u000043$/
+/^\d{3}\w+\n\t\u000043$/
