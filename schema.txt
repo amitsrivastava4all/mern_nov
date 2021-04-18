@@ -1,0 +1,49 @@
+
+
+
+
+
+
+Add Test/ Add User
+
+Is we need a different collection
+
+Question Bank or Test?
+Question Types?
+
+
+T/F
+
+QuestionTypes
+{type:T/F, qid:[10,20,30,40]}
+
+Test Collection 
+{
+_id:PK, name:’JS Test’ , questions:[qid, qid, qid, qid, qid],
+time:0, marks:0, attempts: 
+}
+
+Test_Question Collection
+{testid: 1, qid:10}, {testid: 1, qid:20}
+
+
+
+Question Collection (Table)
+Collection —> JSON (Document)
+{_id:PK, name:’V8 Engine used by ’, answers:[
+{text:’Chrome  Browser’, rightAns:’Y’, score:1},
+{text:’Brave  Browser’, rightAns:’Y’, score:1},
+{text:’I.E  Browser’, rightAns:’N’, score:0}
+{text:’FireFox  Browser’, rightAns:’N’, score:0}
+
+], questionBank:’Y’},
+
+
+{_id:PK, name:’V8 Engine used by Chrome ’, answers:[
+{text:’True’, rightAns:’Y’, score:1},
+{text:’False’, rightAns:’Y’, score:1}
+
+], questionBank:’Y’}
+
+
+Answer?
